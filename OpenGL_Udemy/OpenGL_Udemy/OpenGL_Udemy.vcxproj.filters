@@ -21,7 +21,25 @@
     <ClCompile Include="External\GLM\glm\detail\glm.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="External\GLM\glm\glm.cppm">
+    <ClCompile Include="Source\OpenGLDebuger.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="External\IMGUI\IMGUI\imgui.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="External\IMGUI\IMGUI\imgui_demo.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="External\IMGUI\IMGUI\imgui_draw.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="External\IMGUI\IMGUI\imgui_impl_glfw_gl3.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Examples\Examples.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Shader.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
   </ItemGroup>
@@ -573,6 +591,10 @@
     <None Include="External\GLM\glm\gtx\wrap.inl">
       <Filter>Arquivos de Cabeçalho</Filter>
     </None>
+    <None Include="Resources\Shaders\BasicFrag.shader" />
+    <None Include="Resources\Shaders\BasicVertex.shader" />
+    <None Include="Resources\Shaders\BasicFrag - Copia (2).shader" />
+    <None Include="Resources\Shaders\BasicFrag - Copia.shader" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="External\GLEW\glew\include\GL\eglew.h">
@@ -1463,12 +1485,42 @@
     <ClInclude Include="External\GLM\glm\vector_relational.hpp">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
+    <ClInclude Include="Headers\OpenGLDebugger.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\IMGUI\IMGUI\imconfig.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\IMGUI\IMGUI\imgui.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\IMGUI\IMGUI\imgui_impl_glfw_gl3.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\IMGUI\IMGUI\imgui_internal.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\IMGUI\IMGUI\stb_rect_pack.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\IMGUI\IMGUI\stb_textedit.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\IMGUI\IMGUI\stb_truetype.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Examples\Examples.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Shader.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Library Include="External\GLEW\glew\lib\Release\Win32\glew32s.lib" />
-    <Library Include="External\GLEW\glew\lib\Release\Win32\glew32.lib" />
     <Library Include="External\GLFW\glfw\lib-vc2022\glfw3.lib" />
     <Library Include="External\GLFW\glfw\lib-vc2022\glfw3_mt.lib" />
     <Library Include="External\GLFW\glfw\lib-vc2022\glfw3dll.lib" />
+    <Library Include="External\GLEW\glew\lib\Release\Win32\glew32.lib" />
+    <Library Include="External\GLEW\glew\lib\Release\Win32\glew32s.lib" />
   </ItemGroup>
 </Project>
