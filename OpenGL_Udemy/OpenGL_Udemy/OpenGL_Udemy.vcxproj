@@ -74,15 +74,16 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;GLEW_STATIC;SOLUTION_DIR=R"($(SolutionDir))";_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)OpenGL_Udemy\External\GLEW\glew\include;$(SolutionDir)OpenGL_Udemy\External\GLFW\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)OpenGL_Udemy\Source\Examples;$(SolutionDir)OpenGL_Udemy\External\GLEW\glew\include;$(SolutionDir)OpenGL_Udemy\External\GLFW\glfw\include;$(SolutionDir)OpenGL_Udemy\External\GLM\glm;$(SolutionDir)OpenGL_Udemy\External\GLM;$(SolutionDir)OpenGL_Udemy\External\IMGUI;$(SolutionDir)OpenGL_Udemy\Headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)OpenGL_Udemy\External\GLEW\glew\lib\Release\Win32;$(SolutionDir)OpenGL_Udemy\External\GLFW\glfw\lib-vc2022</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;User32.lib;Gdi32.lib;Shell32.lib;glew32s.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
     </Link>
   </ItemDefinitionGroup>
@@ -92,9 +93,10 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;GLEW_STATIC;SOLUTION_DIR=R"($(SolutionDir))";NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)OpenGL_Udemy\External\GLEW\glew\include;$(SolutionDir)OpenGL_Udemy\External\GLFW\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)OpenGL_Udemy\Source\Examples;$(SolutionDir)OpenGL_Udemy\External\GLEW\glew\include;$(SolutionDir)OpenGL_Udemy\External\GLFW\glfw\include;$(SolutionDir)OpenGL_Udemy\External\GLM\glm;$(SolutionDir)OpenGL_Udemy\External\GLM;$(SolutionDir)OpenGL_Udemy\External\IMGUI;$(SolutionDir)OpenGL_Udemy\Headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -102,7 +104,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)OpenGL_Udemy\External\GLEW\glew\lib\Release\Win32;$(SolutionDir)OpenGL_Udemy\External\GLFW\glfw\lib-vc2022</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;User32.lib;Gdi32.lib;Shell32.lib;glew32s.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
     </Link>
   </ItemDefinitionGroup>
@@ -110,12 +112,14 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;GLEW_STATIC;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)OpenGL_Udemy\Source\Examples;$(SolutionDir)OpenGL_Udemy\External\GLEW\glew\include;$(SolutionDir)OpenGL_Udemy\External\GLFW\glfw\include;$(SolutionDir)OpenGL_Udemy\External\GLM\glm;$(SolutionDir)OpenGL_Udemy\External\GLM;$(SolutionDir)OpenGL_Udemy\External\IMGUI;$(SolutionDir)OpenGL_Udemy\Headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)OpenGL_Udemy\External\GLEW\glew\lib\Release\Win32;$(SolutionDir)OpenGL_Udemy\External\GLFW\glfw\lib-vc2022</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -124,20 +128,28 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;GLEW_STATIC;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)OpenGL_Udemy\Source\Examples;$(SolutionDir)OpenGL_Udemy\External\GLEW\glew\include;$(SolutionDir)OpenGL_Udemy\External\GLFW\glfw\include;$(SolutionDir)OpenGL_Udemy\External\GLM\glm;$(SolutionDir)OpenGL_Udemy\External\GLM;$(SolutionDir)OpenGL_Udemy\External\IMGUI;$(SolutionDir)OpenGL_Udemy\Headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)OpenGL_Udemy\External\GLEW\glew\lib\Release\Win32;$(SolutionDir)OpenGL_Udemy\External\GLFW\glfw\lib-vc2022</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="External\GLM\glm\detail\glm.cpp" />
-    <ClCompile Include="External\GLM\glm\glm.cppm" />
+    <ClCompile Include="External\IMGUI\IMGUI\imgui.cpp" />
+    <ClCompile Include="External\IMGUI\IMGUI\imgui_demo.cpp" />
+    <ClCompile Include="External\IMGUI\IMGUI\imgui_draw.cpp" />
+    <ClCompile Include="External\IMGUI\IMGUI\imgui_impl_glfw_gl3.cpp" />
     <ClCompile Include="Source\Application.cpp" />
+    <ClCompile Include="Source\Examples\Examples.cpp" />
+    <ClCompile Include="Source\OpenGLDebuger.cpp" />
+    <ClCompile Include="Source\Shader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="External\GLEW\glew\doc\advanced.html" />
@@ -411,6 +423,10 @@
     <None Include="Libs\GLFW\glwf\docs\html\vulkan_guide.html" />
     <None Include="Libs\GLFW\glwf\docs\html\window_8md.html" />
     <None Include="Libs\GLFW\glwf\docs\html\window_guide.html" />
+    <None Include="Resources\Shaders\BasicFrag - Copia (2).shader" />
+    <None Include="Resources\Shaders\BasicFrag - Copia.shader" />
+    <None Include="Resources\Shaders\BasicFrag.shader" />
+    <None Include="Resources\Shaders\BasicVertex.shader" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="External\GLEW\glew\include\GL\eglew.h" />
@@ -707,8 +723,18 @@
     <ClInclude Include="External\GLM\glm\vec3.hpp" />
     <ClInclude Include="External\GLM\glm\vec4.hpp" />
     <ClInclude Include="External\GLM\glm\vector_relational.hpp" />
+    <ClInclude Include="External\IMGUI\IMGUI\imconfig.h" />
+    <ClInclude Include="External\IMGUI\IMGUI\imgui.h" />
+    <ClInclude Include="External\IMGUI\IMGUI\imgui_impl_glfw_gl3.h" />
+    <ClInclude Include="External\IMGUI\IMGUI\imgui_internal.h" />
+    <ClInclude Include="External\IMGUI\IMGUI\stb_rect_pack.h" />
+    <ClInclude Include="External\IMGUI\IMGUI\stb_textedit.h" />
+    <ClInclude Include="External\IMGUI\IMGUI\stb_truetype.h" />
+    <ClInclude Include="Headers\OpenGLDebugger.h" />
+    <ClInclude Include="Headers\Shader.h" />
     <ClInclude Include="Libs\GLFW\glwf\include\GLFW\glfw3.h" />
     <ClInclude Include="Libs\GLFW\glwf\include\GLFW\glfw3native.h" />
+    <ClInclude Include="Source\Examples\Examples.h" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="External\GLEW\glew\lib\Release\Win32\glew32.lib" />
