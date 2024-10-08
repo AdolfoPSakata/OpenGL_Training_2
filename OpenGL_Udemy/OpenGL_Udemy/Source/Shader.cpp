@@ -1,16 +1,15 @@
 #include <Shader.h>
 
 Shader::Shader(std::string& paths) :
-    m_RendererID(0)
+    m_ShaderID(0)
 {
     ShaderSource shaderSource;
     Shader::PreCompileShaders(paths);
-    // m_RendererID = Shader::CreateProgram(shaderSource);
 }
 
 Shader::~Shader()
 {
-    DebugLog(glDeleteProgram(m_RendererID));
+    DebugLog(glDeleteProgram(m_ShaderID));
 }
 
 //Relative path from the solution
@@ -90,22 +89,22 @@ unsigned int Shader::CompileShader(unsigned int type, const std::string& source)
     unsigned int id = glCreateShader(type);
     const char* src = source.c_str();
 
-    glShaderSource(id, 1, &src, nullptr);
-    glCompileShader(id);
+    DebugLog(glShaderSource(id, 1, &src, nullptr));
+    DebugLog(glCompileShader(id));
 
     int result;
-    glGetShaderiv(id, GL_COMPILE_STATUS, &result);
+    DebugLog(glGetShaderiv(id, GL_COMPILE_STATUS, &result));
 
     if (result == GL_FALSE)
     {
         int lenght = 0;
-        glGetShaderiv(id, GL_INFO_LOG_LENGTH, &lenght);
+        DebugLog(glGetShaderiv(id, GL_INFO_LOG_LENGTH, &lenght));
         char* message = (char*)malloc(lenght * sizeof(char));
-        glGetShaderInfoLog(id, lenght, &lenght, message);
+        DebugLog(glGetShaderInfoLog(id, lenght, &lenght, message));
         std::cout << "FAIL TO COMPILE SHADER - " << message << std::endl;
 
         //if shader do not compile, delete beforehand
-        glDeleteShader(id);
+        DebugLog(glDeleteShader(id));
         return 0;
     }
     return id;
@@ -139,10 +138,9 @@ void Shader::RegisterShaderSource(ShaderSource& shader, SHADER_SOURCE_MAP& shade
     }
 }
 
-
 void Shader::Bind() const
 {
-    DebugLog(glUseProgram(m_RendererID));
+    DebugLog(glUseProgram(m_ShaderID));
 }
 
 void Shader::Unbind() const
@@ -175,7 +173,7 @@ GLint Shader::GetUniformLocation(const std::string& name) const
     if (m_uniformLocationCache.find(name) != m_uniformLocationCache.end())
         return m_uniformLocationCache[name];
 
-    GLint location = glGetUniformLocation(m_RendererID, name.c_str());
+    GLint location = glGetUniformLocation(m_ShaderID, name.c_str());
 
     if (location == -1)
         std::cout << "Uniform location not found: " << name << std::endl;
@@ -208,6 +206,6 @@ int Shader::ProgramSetup(const ShaderComposition& source)
     DebugLog(glDetachShader(program, source.fragmentSource));
     
     DebugLog(glValidateProgram(program));
-
+    m_ShaderID = program;
     return program;
 }

@@ -148,8 +148,12 @@
     <ClCompile Include="External\IMGUI\IMGUI\imgui_impl_glfw_gl3.cpp" />
     <ClCompile Include="Source\Application.cpp" />
     <ClCompile Include="Source\Examples\Examples.cpp" />
+    <ClCompile Include="Source\IndexBuffer.cpp" />
     <ClCompile Include="Source\OpenGLDebuger.cpp" />
+    <ClCompile Include="Source\Renderer.cpp" />
+    <ClCompile Include="Source\VertexArrayObject.cpp" />
     <ClCompile Include="Source\Shader.cpp" />
+    <ClCompile Include="Source\VertexBuffer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="External\GLEW\glew\doc\advanced.html" />
@@ -423,10 +427,8 @@
     <None Include="Libs\GLFW\glwf\docs\html\vulkan_guide.html" />
     <None Include="Libs\GLFW\glwf\docs\html\window_8md.html" />
     <None Include="Libs\GLFW\glwf\docs\html\window_guide.html" />
-    <None Include="Resources\Shaders\BasicFrag - Copia (2).shader" />
-    <None Include="Resources\Shaders\BasicFrag - Copia.shader" />
-    <None Include="Resources\Shaders\BasicFrag.shader" />
     <None Include="Resources\Shaders\BasicVertex.shader" />
+    <None Include="Resources\Shaders\BasicFrag.shader" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="External\GLEW\glew\include\GL\eglew.h" />
@@ -730,8 +732,13 @@
     <ClInclude Include="External\IMGUI\IMGUI\stb_rect_pack.h" />
     <ClInclude Include="External\IMGUI\IMGUI\stb_textedit.h" />
     <ClInclude Include="External\IMGUI\IMGUI\stb_truetype.h" />
+    <ClInclude Include="Headers\IndexBuffer.h" />
+    <ClInclude Include="Headers\Renderer.h" />
+    <ClInclude Include="Headers\VertexArrayObject.h" />
     <ClInclude Include="Headers\OpenGLDebugger.h" />
     <ClInclude Include="Headers\Shader.h" />
+    <ClInclude Include="Headers\VertexBuffer.h" />
+    <ClInclude Include="Headers\VertexBufferLayout.h" />
     <ClInclude Include="Libs\GLFW\glwf\include\GLFW\glfw3.h" />
     <ClInclude Include="Libs\GLFW\glwf\include\GLFW\glfw3native.h" />
     <ClInclude Include="Source\Examples\Examples.h" />

@@ -58,7 +58,7 @@ public:
     void SetUniform1f(const std::string& name, float f);
 
 private:
-    unsigned int m_RendererID;
+    unsigned int m_ShaderID;
     mutable std::unordered_map<std::string, ShaderSource> m_VertexSources = {};
     mutable std::unordered_map<std::string, ShaderSource> m_FragmentSources = {};
     mutable std::unordered_map<std::string, ShaderSource> m_TesseletionSurces = {};
