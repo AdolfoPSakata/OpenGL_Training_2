@@ -15,6 +15,7 @@ struct RendererObject
 	VertexBuffer& vbu;
 	IndexBuffer& ibu;
 	Shader& shader;
+
 	const void Unbind()
 	{
 		vao.Unbind();
@@ -26,10 +27,12 @@ struct RendererObject
 
 class Renderer {
 public:
+	
+
 	void Draw(const RendererObject& renderObject);
 	void Clear() const;
+	void Unbind(const RendererObject& renderObject);
 
 	//TODO: move to class
-	int GetUniformLocation(const int shader, const char* uniformString);
-	void Unbind(const RendererObject& renderObject);
+	//int GetUniformLocation(const int shader, const char* uniformString);
 };

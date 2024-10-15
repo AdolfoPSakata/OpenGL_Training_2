@@ -150,6 +150,8 @@
     <ClCompile Include="Source\Examples\Examples.cpp" />
     <ClCompile Include="Source\IndexBuffer.cpp" />
     <ClCompile Include="Source\OpenGLDebuger.cpp" />
+    <ClCompile Include="Source\Camera.cpp" />
+    <ClCompile Include="Source\UniformsManager.cpp" />
     <ClCompile Include="Source\Renderer.cpp" />
     <ClCompile Include="Source\VertexArrayObject.cpp" />
     <ClCompile Include="Source\Shader.cpp" />
@@ -732,6 +734,8 @@
     <ClInclude Include="External\IMGUI\IMGUI\stb_rect_pack.h" />
     <ClInclude Include="External\IMGUI\IMGUI\stb_textedit.h" />
     <ClInclude Include="External\IMGUI\IMGUI\stb_truetype.h" />
+    <ClInclude Include="Headers\UniformsManager.h" />
+    <ClInclude Include="Headers\Camera.h" />
     <ClInclude Include="Headers\IndexBuffer.h" />
     <ClInclude Include="Headers\Renderer.h" />
     <ClInclude Include="Headers\VertexArrayObject.h" />

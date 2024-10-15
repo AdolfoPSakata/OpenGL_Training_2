@@ -3,6 +3,7 @@
 VertexArrayObject::VertexArrayObject()
 {
     DebugLog(glGenVertexArrays(1, &m_VertexArrayObject));
+    DebugLog(glBindVertexArray(m_VertexArrayObject));
 }
 
 VertexArrayObject::~VertexArrayObject()
@@ -19,10 +20,9 @@ void VertexArrayObject::AddBuffer(const VertexBuffer& vertexBuffer, const Vertex
     unsigned int offset = 0;
     for (unsigned int i = 0; i < elements.size(); i++)
     {
-        const auto& element = elements[i];
-        DebugLog(glEnableVertexAttribArray(i));
+        const auto& element = elements[0];
         DebugLog(glVertexAttribPointer(i, element.count, element.type, element.normalized, layout.GetStride(), (const void*)offset));
-        std::cout << i << " index " << element.count << std::endl;
+        DebugLog(glEnableVertexAttribArray(0));
         offset += element.count * VertexBufferElement::GetSizeOfType(element.type);
     }
 }

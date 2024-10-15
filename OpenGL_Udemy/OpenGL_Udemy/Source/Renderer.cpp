@@ -1,9 +1,10 @@
 #include <Renderer.h>
 
-#define SetUniform(x) (GLEW_GET_FUN(x))
+
 
 void Renderer::Clear() const
 {
+    DebugLog(glClearColor(0,0.3f,0,1));
     DebugLog(glClear(GL_COLOR_BUFFER_BIT));
 }
 
@@ -14,14 +15,8 @@ void Renderer::Draw(const RendererObject& renderObject)
     renderObject.ibu.Bind();
     renderObject.shader.Bind();
 
+    //glDrawArrays(GL_TRIANGLES, 0,3);
     DebugLog(glDrawElements(GL_TRIANGLES, renderObject.ibu.GetCount(), GL_UNSIGNED_INT, nullptr));
-}
-
-//TODO: move to class
-int Renderer::GetUniformLocation(const int shader, const char* uniformString)
-{
-    int location = glGetUniformLocation(shader, SetUniform(uniformString));
-    return location;
 }
 
 void Renderer::Unbind(const RendererObject& renderObject)
