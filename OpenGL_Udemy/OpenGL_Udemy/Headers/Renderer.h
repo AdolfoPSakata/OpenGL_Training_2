@@ -13,22 +13,20 @@ struct RendererObject
 {
 	VertexArrayObject& vao;
 	VertexBuffer& vbu;
-	IndexBuffer& ibu;
+	IndexBuffer& ibo;
 	Shader& shader;
 
 	const void Unbind()
 	{
 		vao.Unbind();
 		vbu.Unbind();
-		ibu.Unbind();
+		ibo.Unbind();
 		shader.Unbind();
 	};
 };
 
 class Renderer {
 public:
-	
-
 	void Draw(const RendererObject& renderObject);
 	void Clear() const;
 	void Unbind(const RendererObject& renderObject);

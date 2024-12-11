@@ -114,20 +114,10 @@ unsigned int Shader::CompileShader(unsigned int type, const std::string& source)
 
 void Shader::RegisterShaderSource(ShaderSource& shader, SHADER_SOURCE_MAP& shadersMap)
 {
-    int arrayCount = 2;
-
     switch (shader.type)
     {
         case ShaderType::VERTEX:
             shader.id = CompileShader(GL_VERTEX_SHADER, shader.source);
-            arrayCount = 1;
-
-            //------------
-            
-            for (int i = 0; i < arrayCount; i++)
-            {
-               // shader.uniformLocation["u_MVP"] = m_UniformManager.PreProcessUniforms(shader.id, "u_MVP");
-            }
 
             shadersMap["vertex"][shader.name] = shader;
             std::cout << "SHADER ID: VERT - " << shader.id << std::endl;
@@ -135,14 +125,6 @@ void Shader::RegisterShaderSource(ShaderSource& shader, SHADER_SOURCE_MAP& shade
 
         case ShaderType::FRAGMENT:
             shader.id = CompileShader(GL_FRAGMENT_SHADER, shader.source);
-            arrayCount = 1;
-            
-           
-
-            for (int i = 0; i < arrayCount; i++)
-            {
-                //shader.uniformLocation["u_Color"] = m_UniformManager.PreProcessUniforms(shader.id, "u_Color");
-            }
             
             shadersMap["fragment"][shader.name] = shader;
             std::cout <<  "SHADER ID: FRAG - " << shader.id << std::endl;
@@ -181,9 +163,14 @@ unsigned int Shader::CreateProgram(const std::string& vertexName, const std::str
     composition.vertexUniformCount = 1;
     composition.vertexStrings = {"u_MVP"};
 
-    composition.fragmentSource = m_ShaderSources.at("fragment").at(fragName).id;
-    composition.fragUniformCount = 1;
-    composition.fragStrings = { "u_Color" };
+   composition.fragmentSource = m_ShaderSources.at("fragment").at(fragName).id;
+   composition.fragUniformCount = 2;
+   composition.fragStrings = { "u_Color" , "u_Texture" };
+
+   //composition.fragmentSource = m_ShaderSources.at("fragment").at(fragName).id;
+   //composition.fragUniformCount = 2;
+   //composition.fragStrings = {  };
+
     //TODO: Impement others shaders
     unsigned int program = ProgramSetup(composition);
     return program;
@@ -196,7 +183,6 @@ int Shader::ProgramSetup(const ShaderComposition& source)
     DebugLog(glAttachShader(m_ShaderID, source.fragmentSource));
     DebugLog(glLinkProgram(m_ShaderID));
     
-
     //TODO:: MOVE it
     GLint result = 0;
     GLchar eLog[1024] = { 0 };
@@ -218,12 +204,13 @@ int Shader::ProgramSetup(const ShaderComposition& source)
         glGetProgramInfoLog(m_ShaderID, 1024, NULL, eLog);
         printf("Error linking program: %s \n", eLog);
     }
-
+    std::cout << " VERTEX UNIFORM: " << std::endl;
     for (int i = 0; i < source.vertexUniformCount; i++)
     {
         m_ShaderSources["vertex"]["BasicVertex"].uniformLocation[source.vertexStrings[i]] =
             m_UniformManager.PreProcessUniforms(m_ShaderID, source.vertexStrings[i]);
     }
+    std::cout << " FRAG UNIFORM: " << std::endl;
     for (int i = 0; i < source.fragUniformCount; i++)
     {
        m_ShaderSources["fragment"]["BasicFrag"].uniformLocation[source.fragStrings[i]] =

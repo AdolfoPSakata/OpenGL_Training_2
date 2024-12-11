@@ -60,6 +60,15 @@
     <ClCompile Include="Source\UniformsManager.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Player.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Texture.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="External\STB_IMAGE\stb_image.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="External\GLEW\glew\doc\advanced.html" />
@@ -1552,6 +1561,18 @@
     <ClInclude Include="Headers\UniformsManager.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
+    <ClInclude Include="Headers\Definitions.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Player.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Texture.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\STB_IMAGE\stb_image.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="External\GLFW\glfw\lib-vc2022\glfw3.lib" />
@@ -1559,5 +1580,16 @@
     <Library Include="External\GLFW\glfw\lib-vc2022\glfw3dll.lib" />
     <Library Include="External\GLEW\glew\lib\Release\Win32\glew32.lib" />
     <Library Include="External\GLEW\glew\lib\Release\Win32\glew32s.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\Textures\UVMap.png">
+      <Filter>Arquivos de Recurso</Filter>
+    </Image>
+    <Image Include="Resources\Textures\UVMap2.png">
+      <Filter>Arquivos de Recurso</Filter>
+    </Image>
+    <Image Include="Resources\Textures\1.png">
+      <Filter>Arquivos de Recurso</Filter>
+    </Image>
   </ItemGroup>
 </Project>

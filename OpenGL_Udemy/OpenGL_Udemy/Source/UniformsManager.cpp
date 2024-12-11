@@ -30,6 +30,11 @@ void UniformManager::SetUniformMat4f(GLint& location, glm::mat4& matrix)
     glUniformMatrix4fv(location, 1, GL_FALSE, &matrix[0][0]);
 }
 
+void UniformManager::SetUniform1i(GLint& location, int i)
+{
+    glUniform1i(location, i);
+}
+
 //void UniformManager::SetUniform1i(ShaderSource& source, std::string& name, int i) 
 //{
 //    DebugLog(glUniform1i(source.uniformLocation[name], i));
