@@ -42,6 +42,33 @@
     <ClCompile Include="Source\Shader.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
+    <ClCompile Include="Source\VertexArrayObject.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IndexBuffer.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\VertexBuffer.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Renderer.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Camera.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\UniformsManager.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Player.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Texture.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="External\STB_IMAGE\stb_image.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="External\GLEW\glew\doc\advanced.html" />
@@ -591,10 +618,8 @@
     <None Include="External\GLM\glm\gtx\wrap.inl">
       <Filter>Arquivos de Cabeçalho</Filter>
     </None>
-    <None Include="Resources\Shaders\BasicFrag.shader" />
     <None Include="Resources\Shaders\BasicVertex.shader" />
-    <None Include="Resources\Shaders\BasicFrag - Copia (2).shader" />
-    <None Include="Resources\Shaders\BasicFrag - Copia.shader" />
+    <None Include="Resources\Shaders\BasicFrag.shader" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="External\GLEW\glew\include\GL\eglew.h">
@@ -1515,6 +1540,39 @@
     <ClInclude Include="Headers\Shader.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
+    <ClInclude Include="Headers\VertexArrayObject.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\IndexBuffer.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\VertexBuffer.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\VertexBufferLayout.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Renderer.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Camera.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\UniformsManager.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Definitions.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Player.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\Texture.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\STB_IMAGE\stb_image.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="External\GLFW\glfw\lib-vc2022\glfw3.lib" />
@@ -1522,5 +1580,16 @@
     <Library Include="External\GLFW\glfw\lib-vc2022\glfw3dll.lib" />
     <Library Include="External\GLEW\glew\lib\Release\Win32\glew32.lib" />
     <Library Include="External\GLEW\glew\lib\Release\Win32\glew32s.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\Textures\UVMap.png">
+      <Filter>Arquivos de Recurso</Filter>
+    </Image>
+    <Image Include="Resources\Textures\UVMap2.png">
+      <Filter>Arquivos de Recurso</Filter>
+    </Image>
+    <Image Include="Resources\Textures\1.png">
+      <Filter>Arquivos de Recurso</Filter>
+    </Image>
   </ItemGroup>
 </Project>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -76,7 +76,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;GLEW_STATIC;SOLUTION_DIR=R"($(SolutionDir))";_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)OpenGL_Udemy\Source\Examples;$(SolutionDir)OpenGL_Udemy\External\GLEW\glew\include;$(SolutionDir)OpenGL_Udemy\External\GLFW\glfw\include;$(SolutionDir)OpenGL_Udemy\External\GLM\glm;$(SolutionDir)OpenGL_Udemy\External\GLM;$(SolutionDir)OpenGL_Udemy\External\IMGUI;$(SolutionDir)OpenGL_Udemy\Headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)OpenGL_Udemy\Source\Examples;$(SolutionDir)OpenGL_Udemy\External\GLEW\glew\include;$(SolutionDir)OpenGL_Udemy\External\GLFW\glfw\include;$(SolutionDir)OpenGL_Udemy\External\GLM\glm;$(SolutionDir)OpenGL_Udemy\External\GLM;$(SolutionDir)OpenGL_Udemy\External\IMGUI;$(SolutionDir)OpenGL_Udemy\External\STB_IMAGE;$(SolutionDir)OpenGL_Udemy\Headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -95,7 +95,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;GLEW_STATIC;SOLUTION_DIR=R"($(SolutionDir))";NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)OpenGL_Udemy\Source\Examples;$(SolutionDir)OpenGL_Udemy\External\GLEW\glew\include;$(SolutionDir)OpenGL_Udemy\External\GLFW\glfw\include;$(SolutionDir)OpenGL_Udemy\External\GLM\glm;$(SolutionDir)OpenGL_Udemy\External\GLM;$(SolutionDir)OpenGL_Udemy\External\IMGUI;$(SolutionDir)OpenGL_Udemy\Headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)OpenGL_Udemy\Source\Examples;$(SolutionDir)OpenGL_Udemy\External\GLEW\glew\include;$(SolutionDir)OpenGL_Udemy\External\GLFW\glfw\include;$(SolutionDir)OpenGL_Udemy\External\GLM\glm;$(SolutionDir)OpenGL_Udemy\External\GLM;$(SolutionDir)OpenGL_Udemy\External\IMGUI;$(SolutionDir)OpenGL_Udemy\External\STB_IMAGE;$(SolutionDir)OpenGL_Udemy\Headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -146,10 +146,19 @@
     <ClCompile Include="External\IMGUI\IMGUI\imgui_demo.cpp" />
     <ClCompile Include="External\IMGUI\IMGUI\imgui_draw.cpp" />
     <ClCompile Include="External\IMGUI\IMGUI\imgui_impl_glfw_gl3.cpp" />
+    <ClCompile Include="External\STB_IMAGE\stb_image.cpp" />
     <ClCompile Include="Source\Application.cpp" />
     <ClCompile Include="Source\Examples\Examples.cpp" />
+    <ClCompile Include="Source\IndexBuffer.cpp" />
     <ClCompile Include="Source\OpenGLDebuger.cpp" />
+    <ClCompile Include="Source\Camera.cpp" />
+    <ClCompile Include="Source\Player.cpp" />
+    <ClCompile Include="Source\Texture.cpp" />
+    <ClCompile Include="Source\UniformsManager.cpp" />
+    <ClCompile Include="Source\Renderer.cpp" />
+    <ClCompile Include="Source\VertexArrayObject.cpp" />
     <ClCompile Include="Source\Shader.cpp" />
+    <ClCompile Include="Source\VertexBuffer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="External\GLEW\glew\doc\advanced.html" />
@@ -423,10 +432,8 @@
     <None Include="Libs\GLFW\glwf\docs\html\vulkan_guide.html" />
     <None Include="Libs\GLFW\glwf\docs\html\window_8md.html" />
     <None Include="Libs\GLFW\glwf\docs\html\window_guide.html" />
-    <None Include="Resources\Shaders\BasicFrag - Copia (2).shader" />
-    <None Include="Resources\Shaders\BasicFrag - Copia.shader" />
-    <None Include="Resources\Shaders\BasicFrag.shader" />
     <None Include="Resources\Shaders\BasicVertex.shader" />
+    <None Include="Resources\Shaders\BasicFrag.shader" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="External\GLEW\glew\include\GL\eglew.h" />
@@ -730,8 +737,19 @@
     <ClInclude Include="External\IMGUI\IMGUI\stb_rect_pack.h" />
     <ClInclude Include="External\IMGUI\IMGUI\stb_textedit.h" />
     <ClInclude Include="External\IMGUI\IMGUI\stb_truetype.h" />
+    <ClInclude Include="External\STB_IMAGE\stb_image.h" />
+    <ClInclude Include="Headers\Definitions.h" />
+    <ClInclude Include="Headers\Player.h" />
+    <ClInclude Include="Headers\Texture.h" />
+    <ClInclude Include="Headers\UniformsManager.h" />
+    <ClInclude Include="Headers\Camera.h" />
+    <ClInclude Include="Headers\IndexBuffer.h" />
+    <ClInclude Include="Headers\Renderer.h" />
+    <ClInclude Include="Headers\VertexArrayObject.h" />
     <ClInclude Include="Headers\OpenGLDebugger.h" />
     <ClInclude Include="Headers\Shader.h" />
+    <ClInclude Include="Headers\VertexBuffer.h" />
+    <ClInclude Include="Headers\VertexBufferLayout.h" />
     <ClInclude Include="Libs\GLFW\glwf\include\GLFW\glfw3.h" />
     <ClInclude Include="Libs\GLFW\glwf\include\GLFW\glfw3native.h" />
     <ClInclude Include="Source\Examples\Examples.h" />
@@ -742,6 +760,11 @@
     <Library Include="External\GLFW\glfw\lib-vc2022\glfw3.lib" />
     <Library Include="External\GLFW\glfw\lib-vc2022\glfw3dll.lib" />
     <Library Include="External\GLFW\glfw\lib-vc2022\glfw3_mt.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\Textures\1.png" />
+    <Image Include="Resources\Textures\UVMap.png" />
+    <Image Include="Resources\Textures\UVMap2.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
