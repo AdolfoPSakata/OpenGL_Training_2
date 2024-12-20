@@ -1,7 +1,6 @@
 #pragma once
 
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
+#include <Definitions.h>
 
 #include <OpenGLDebugger.h>
 #include <VertexBuffer.h>
@@ -13,7 +12,7 @@ public:
 	VertexArrayObject();
 	~VertexArrayObject();
 	
-	void AddBuffer(const VertexBuffer& vertexBuffer, const VertexBufferLayout& layout);
+	void AddBuffer(const VertexBuffer* vertexBuffer, const VertexBufferLayout& layout);
 	void Bind() const;
 	void Unbind() const;
 private:

@@ -6,21 +6,20 @@ void Renderer::Clear() const
     DebugLog(glClear(GL_COLOR_BUFFER_BIT));
 }
 
-void Renderer::Draw(const RendererObject& renderObject)
+void Renderer::Draw(const RendererObject* rendererObject)
 {
-    renderObject.vao.Bind();
-    renderObject.vbu.Bind();
-    renderObject.ibo.Bind();
-    renderObject.shader.Bind();
+    rendererObject->vao->Bind();
+    rendererObject->vbu->Bind();
+    rendererObject->ibo->Bind();
+    rendererObject->shader->Bind();
 
-    //glDrawArrays(GL_TRIANGLES, 0,3);
-    DebugLog(glDrawElements(GL_TRIANGLES, renderObject.ibo.GetCount(), GL_UNSIGNED_INT, nullptr));
+    DebugLog(glDrawElements(GL_TRIANGLES, rendererObject->ibo->GetCount(), GL_UNSIGNED_INT, nullptr));
 }
 
-void Renderer::Unbind(const RendererObject& renderObject)
+void Renderer::Unbind(const RendererObject* rendererObject)
 {
-    renderObject.vao.Unbind();
-    renderObject.vbu.Unbind();
-    renderObject.ibo.Unbind();
-    renderObject.shader.Unbind();
+    rendererObject->vao->Unbind();
+    rendererObject->vbu->Unbind();
+    rendererObject->ibo->Unbind();
+    rendererObject->shader->Unbind();
 }

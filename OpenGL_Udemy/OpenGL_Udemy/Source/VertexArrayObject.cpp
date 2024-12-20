@@ -11,18 +11,18 @@ VertexArrayObject::~VertexArrayObject()
     DebugLog(glDeleteVertexArrays(1, &m_VertexArrayObject));
 }
 
-void VertexArrayObject::AddBuffer(const VertexBuffer& vertexBuffer, const VertexBufferLayout& layout)
+void VertexArrayObject::AddBuffer(const VertexBuffer* vertexBuffer, const VertexBufferLayout& layout)
 {
     VertexArrayObject::Bind();
-    vertexBuffer.Bind();
+    vertexBuffer->Bind();
 
     const auto& elements = layout.GetElements();
     unsigned int offset = 0;
     for (unsigned int i = 0; i < elements.size(); i++)
     {
-        const auto& element = elements[0];
+        const auto& element = elements[i];
         DebugLog(glVertexAttribPointer(i, element.count, element.type, element.normalized, layout.GetStride(), (const void*)offset));
-        DebugLog(glEnableVertexAttribArray(0));
+        DebugLog(glEnableVertexAttribArray(i));
         offset += element.count * VertexBufferElement::GetSizeOfType(element.type);
     }
 }

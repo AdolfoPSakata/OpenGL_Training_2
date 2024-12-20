@@ -5,7 +5,7 @@ Shader::Shader(UniformManager& uniformManager)
     m_ShaderID = glCreateProgram();
     m_UniformManager = uniformManager;
     Shader::PreCompileShaders(m_ShaderPath);
-    Shader::CreateProgram("BasicVertex", "BasicFrag");
+    Shader::CreateProgram("BasicVertex", "zBasicFrag");
 }
 
 Shader::~Shader()
@@ -145,7 +145,6 @@ void Shader::RegisterShaderSource(ShaderSource& shader, SHADER_SOURCE_MAP& shade
 
 void Shader::Bind() const
 {
-
     DebugLog(glUseProgram(m_ShaderID));
 }
 
@@ -164,8 +163,8 @@ unsigned int Shader::CreateProgram(const std::string& vertexName, const std::str
     composition.vertexStrings = {"u_MVP"};
 
    composition.fragmentSource = m_ShaderSources.at("fragment").at(fragName).id;
-   composition.fragUniformCount = 2;
-   composition.fragStrings = { "u_Color" , "u_Texture" };
+   composition.fragUniformCount = 1;
+   composition.fragStrings = { "u_Texture" };
 
    //composition.fragmentSource = m_ShaderSources.at("fragment").at(fragName).id;
    //composition.fragUniformCount = 2;
@@ -213,7 +212,7 @@ int Shader::ProgramSetup(const ShaderComposition& source)
     std::cout << " FRAG UNIFORM: " << std::endl;
     for (int i = 0; i < source.fragUniformCount; i++)
     {
-       m_ShaderSources["fragment"]["BasicFrag"].uniformLocation[source.fragStrings[i]] =
+       m_ShaderSources["fragment"]["zBasicFrag"].uniformLocation[source.fragStrings[i]] =
            m_UniformManager.PreProcessUniforms(m_ShaderID, source.fragStrings[i]); 
     }
 

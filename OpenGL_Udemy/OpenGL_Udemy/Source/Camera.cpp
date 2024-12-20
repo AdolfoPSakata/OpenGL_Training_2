@@ -5,10 +5,7 @@ glm::vec3 Camera::m_lastPosition = glm::vec3(0);
 glm::vec3 Camera::m_currentPosition = glm::vec3(0);
 
 Camera::Camera(glm::vec3 position, glm::vec3 front, glm::vec3 up, float speed)
-    : Position(position), Front(front), Up(up), MovementSpeed(speed)
-{
-
-}
+    : Position(position), Front(front), Up(up), MovementSpeed(speed) {}
 
 glm::mat4 Camera::GetViewMatrix() {
     return glm::lookAt(Position, Position + Front, Up);
@@ -18,7 +15,7 @@ void Camera::HandleKeys(GLFWwindow* window, int key, int code, int action, int m
 {
     if (key == GLFW_KEY_ESCAPE)
         glfwSetWindowShouldClose(window, GL_TRUE);
-   // if (key == GLFW_KEY_S)
+   //if (key == GLFW_KEY_S)
    //     Position -= MovementSpeed * Front;
    // if (key == GLFW_KEY_A)
    //     Position -= glm::normalize(glm::cross(Front, Up)) * MovementSpeed;

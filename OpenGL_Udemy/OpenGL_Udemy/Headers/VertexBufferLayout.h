@@ -1,8 +1,7 @@
 #pragma once
 
+#include <Definitions.h>
 #include <vector>
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
 #include <iostream>
 
 struct VertexBufferElement

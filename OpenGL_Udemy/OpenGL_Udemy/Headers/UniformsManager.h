@@ -1,8 +1,6 @@
 #pragma once
 
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
-#include <glm.hpp>
+#include <Definitions.h>
 
 #include <OpenGLDebugger.h>
 #include <IndexBuffer.h>

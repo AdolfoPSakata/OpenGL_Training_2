@@ -1,29 +1,22 @@
 #pragma once
+#include <GameObject.h>
+#include <Projectile.h>
+#include <RenderManager.h>
 
-//#include <GL/glew.h>
-//#include <GLFW/glfw3.h>
-//#include <IMGUI/imgui.h>
-//#include <IMGUI/imgui_impl_glfw_gl3.h>
-//#include <GLM/glm.hpp>
-//#include <GLM/GTC/matrix_transform.hpp>
-//#include <GLM/GTC/type_ptr.hpp>
-#include <iostream>
-#include <Texture.h>
-
-class player
+class Player : public GameObject
 {
 public:
-    bool IsAlive;
-    int Lives;
-    float Speed;
-    std::unique_ptr<Texture> m_texture;
-
+    Player();
+    Player(glm::vec2 pos, glm::vec2 size, unsigned int slot, glm::vec4 color = glm::vec4(1.0f), float velocity = 1.0f);
+    ~Player();
+    
+    int shots = 0;
+    void OnRender(UniformManager* uniformManager, RendererObject* rendererObject, TextureManager* textureManager, glm::mat4& m_MVP);
+    void Draw(Renderer* renderer, RendererObject* rendererObject);
     void Shoot();
-    void Move();
-    void Die();
-    void LoseLife();
-
+    //void Die();
+    //void LoseLife();
+    glm::mat4 Move();
+   
+    std::vector<Projectile> projectileVector;
 };
-//texture
-//shoot
-//cooldown

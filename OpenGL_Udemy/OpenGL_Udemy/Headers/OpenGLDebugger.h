@@ -1,7 +1,8 @@
 #pragma once
 
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
+//#include <GL/glew.h>
+//#include <GLFW/glfw3.h>
+#include <Definitions.h>
 #include <iostream>
 
 #define ASSERT(x) if (!(x)) __debugbreak();

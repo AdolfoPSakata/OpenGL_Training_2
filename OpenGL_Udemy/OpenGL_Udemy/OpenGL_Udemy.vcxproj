@@ -147,12 +147,19 @@
     <ClCompile Include="External\IMGUI\IMGUI\imgui_draw.cpp" />
     <ClCompile Include="External\IMGUI\IMGUI\imgui_impl_glfw_gl3.cpp" />
     <ClCompile Include="External\STB_IMAGE\stb_image.cpp" />
+    <ClCompile Include="Resources\Projectile.cpp" />
+    <ClCompile Include="Source\Enemy.cpp" />
+    <ClCompile Include="Source\GameObjectManager.cpp" />
+    <ClCompile Include="Source\TextureManager.cpp" />
+    <ClCompile Include="Source\Game.cpp" />
+    <ClCompile Include="Source\Level.cpp" />
     <ClCompile Include="Source\Application.cpp" />
     <ClCompile Include="Source\Examples\Examples.cpp" />
     <ClCompile Include="Source\IndexBuffer.cpp" />
     <ClCompile Include="Source\OpenGLDebuger.cpp" />
     <ClCompile Include="Source\Camera.cpp" />
     <ClCompile Include="Source\Player.cpp" />
+    <ClCompile Include="Source\RenderManager.cpp" />
     <ClCompile Include="Source\Texture.cpp" />
     <ClCompile Include="Source\UniformsManager.cpp" />
     <ClCompile Include="Source\Renderer.cpp" />
@@ -433,7 +440,7 @@
     <None Include="Libs\GLFW\glwf\docs\html\window_8md.html" />
     <None Include="Libs\GLFW\glwf\docs\html\window_guide.html" />
     <None Include="Resources\Shaders\BasicVertex.shader" />
-    <None Include="Resources\Shaders\BasicFrag.shader" />
+    <None Include="Resources\Shaders\zBasicFrag.shader" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="External\GLEW\glew\include\GL\eglew.h" />
@@ -738,9 +745,17 @@
     <ClInclude Include="External\IMGUI\IMGUI\stb_textedit.h" />
     <ClInclude Include="External\IMGUI\IMGUI\stb_truetype.h" />
     <ClInclude Include="External\STB_IMAGE\stb_image.h" />
+    <ClInclude Include="Headers\Enemy.h" />
+    <ClInclude Include="Headers\Game.h" />
     <ClInclude Include="Headers\Definitions.h" />
+    <ClInclude Include="Headers\GameObject.h" />
+    <ClInclude Include="Headers\GameObjectManager.h" />
+    <ClInclude Include="Headers\Projectile.h" />
+    <ClInclude Include="Headers\Level.h" />
     <ClInclude Include="Headers\Player.h" />
+    <ClInclude Include="Headers\RenderManager.h" />
     <ClInclude Include="Headers\Texture.h" />
+    <ClInclude Include="Headers\TextureManager.h" />
     <ClInclude Include="Headers\UniformsManager.h" />
     <ClInclude Include="Headers\Camera.h" />
     <ClInclude Include="Headers\IndexBuffer.h" />
@@ -763,6 +778,10 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="Resources\Textures\1.png" />
+    <Image Include="Resources\Textures\Alien.png" />
+    <Image Include="Resources\Textures\Error_Texture.png" />
+    <Image Include="Resources\Textures\Shot.png" />
+    <Image Include="Resources\Textures\Tank.png" />
     <Image Include="Resources\Textures\UVMap.png" />
     <Image Include="Resources\Textures\UVMap2.png" />
   </ItemGroup>
