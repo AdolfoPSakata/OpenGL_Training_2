@@ -26,7 +26,6 @@ void Player::Shoot()
         1.0f);
 
     projectileVector.emplace_back(projectile);
-    shots++;
     std::cout << projectile.Position.x << " - " << projectile.Position.y << std::endl;
 }
 
@@ -45,7 +44,7 @@ void Player::OnRender(UniformManager* uniformManager, RendererObject* rendererOb
         m_ShaderSources["vertex"]["BasicVertex"].uniformLocation["u_MVP"], m_MVP);
 
     uniformManager->SetUniform1i(rendererObject->shader->
-        m_ShaderSources["fragment"]["zBasicFrag"].uniformLocation["u_Texture"], textureSlot);
+        m_ShaderSources["fragment"]["BasicFrag"].uniformLocation["u_Texture"], textureSlot);
 }
 
 void Player::Draw(Renderer* renderer, RendererObject* rendererObject)

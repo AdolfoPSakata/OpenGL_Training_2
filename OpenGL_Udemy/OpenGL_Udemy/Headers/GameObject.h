@@ -7,8 +7,6 @@
 class GameObject
 {
 public:
-    //explicit  GameObject();
-    //explicit GameObject(glm::vec2 pos, glm::vec2 size, unsigned int slot, glm::vec4 color = glm::vec4(1.0f), float velocity = 1.0f);
    
     bool IsAlive;
     bool IsSolid;

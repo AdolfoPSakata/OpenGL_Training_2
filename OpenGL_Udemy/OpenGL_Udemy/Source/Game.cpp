@@ -1,6 +1,9 @@
 #include "Game.h"
 
+
 RenderManager* Game::renderManager;
+UIManager* Game::uiManager;
+TextRenderer* Game::test;
 //GameObjectManager* Game::objectManager;
 
 GameState Game::State;
@@ -19,8 +22,10 @@ Game::~Game() {}
 
 void Game::Init()
 {
+    Game::test->Init();
     Game::renderManager->Init();
-    
+    Game::uiManager->Init();
+
     Game::player = Player(
         glm::vec2(0.0f,-0.55f),
         glm::vec2(0.1f, 0.1f),
@@ -39,7 +44,7 @@ void Game::Init()
             glm::vec4(1.0f, 1.0f, 1.0f, 1.0f),
             1.0f);
         enemyVector.push_back(enemy);
-        enemyCount++;
+        
         xPos += 0.12f;
         if (xPos >= 0.5f)
         {
@@ -93,12 +98,13 @@ bool Game::CheckCollision(GameObject& shot, GameObject& enemy)
 
 void Game::EndGameCheck()
 {
-    if (enemyCount <= 0)
+    if (enemyVector.size() <= 0)
     {
         std::cout << "----------------- WIN -------------------" << std::endl;
         return;
     }
-    for (int i = 0; i < enemyCount; i++)
+
+    for (int i = 0; i < enemyVector.size(); i++)
     {
         if (enemyVector[i].Position.y <= -0.5f)
         {
@@ -127,10 +133,12 @@ int Game::Update(float deltaTime)
         
         Game::player.Draw(renderManager->renderer, renderManager->rendererObject);
 
+        Game::uiManager->DrawElements(renderManager, MVP);
+
         bool hasColision = false;
-        for (int i = 0; i < enemyCount; i++)
+        for (int i = 0; i < enemyVector.size(); i++)
         {
-            for (int j = 0; j < Game::player.shots; j++)
+            for (int j = 0; j < Game::player.projectileVector.size(); j++)
             {
                 if (Game::player.projectileVector[j].Destroyed || enemyVector[i].Destroyed)
                     continue;
@@ -141,8 +149,9 @@ int Game::Update(float deltaTime)
                     Game::player.projectileVector[j].OnHit();
                     Game::player.projectileVector[j].~Projectile();
                     enemyVector[i].OnHit();
-                    enemyVector[i].~Enemy();
-
+                    Enemy* currentEnemy = &enemyVector[i];
+                    enemyVector.erase(enemyVector.begin() + i);
+                    currentEnemy->~Enemy();
                     break;
                 }
             }
@@ -153,7 +162,7 @@ int Game::Update(float deltaTime)
             }
         }
 
-        for (int i = 0; i < Game::player.shots; i++)
+        for (int i = 0; i < Game::player.projectileVector.size(); i++)
         {
             if (!Game::player.projectileVector[i].Destroyed)
             {
@@ -165,13 +174,20 @@ int Game::Update(float deltaTime)
 
                 Game::player.projectileVector[i].OnRender(renderManager->uniformManager, renderManager->rendererObject,
                     renderManager->textureManager, MVP3);
+                
                 Game::player.projectileVector[i].Draw(renderManager->renderer, renderManager->rendererObject);
                 
                 Game::player.projectileVector[i].Move();
             }
+            else
+            {
+                Projectile* currentProjectile = &Game::player.projectileVector[i];
+                Game::player.projectileVector.erase(Game::player.projectileVector.begin() + i);
+                currentProjectile->~Projectile();
+            }
         }
         
-        for (int i = 0; i < enemyCount; i++)
+        for (int i = 0; i < enemyVector.size(); i++)
         {
             if (!enemyVector[i].Destroyed)
             {
@@ -187,6 +203,7 @@ int Game::Update(float deltaTime)
                 enemyVector[i].Move(deltaTime);
             }
         }
+        //test->RenderText(renderManager->uniformManager, renderManager->rendererObject, "ASFSDFIOHSDOISJDH", renderManager->renderer, 1,1,1, glm::vec3(1,1,1));
         renderManager->DrawEnd();
         EndGameCheck();
     }

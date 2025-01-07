@@ -1,6 +1,5 @@
 #include <RenderManager.h>
 
-
 RenderManager::RenderManager() {}
 RenderManager::~RenderManager() {}
 
@@ -44,13 +43,7 @@ int RenderManager::Init()
     DebugLog(glEnable(GL_BLEND));
     DebugLog(glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA));
 
-    //TODO
-    //Camera mainCamera(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 0.0f, 1.0f), glm::vec3(0.0f, 1.0f, 0.0f), 1.0f);
-    //mainCamera.CreateCallbacks(window);
-    // glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-
     shader = new Shader(*uniformManager);
-    //TODO: points * data size
     vertexBuffer = new VertexBuffer(positions, 4 * 6 * sizeof(float));
 
     VertexBufferLayout layout;

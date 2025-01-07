@@ -61,7 +61,7 @@ void Enemy::OnRender(UniformManager* uniformManager, RendererObject* rendererObj
         m_ShaderSources["vertex"]["BasicVertex"].uniformLocation["u_MVP"], m_MVP);
 
     uniformManager->SetUniform1i(rendererObject->shader->
-        m_ShaderSources["fragment"]["zBasicFrag"].uniformLocation["u_Texture"], textureSlot);
+        m_ShaderSources["fragment"]["BasicFrag"].uniformLocation["u_Texture"], textureSlot);
 
 }
 

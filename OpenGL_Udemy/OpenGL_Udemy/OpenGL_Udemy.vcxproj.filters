@@ -87,7 +87,16 @@
     <ClCompile Include="Source\GameObjectManager.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Resources\Projectile.cpp">
+    <ClCompile Include="Source\Projectile.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\UIManager.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\UIElement.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\TextRenderer.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
   </ItemGroup>
@@ -640,7 +649,9 @@
       <Filter>Arquivos de Cabeçalho</Filter>
     </None>
     <None Include="Resources\Shaders\BasicVertex.shader" />
-    <None Include="Resources\Shaders\zBasicFrag.shader" />
+    <None Include="Resources\Shaders\BasicFrag.shader" />
+    <None Include="Resources\Shaders\TextFrag.shader" />
+    <None Include="Resources\Shaders\TextVertex.shader" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="External\GLEW\glew\include\GL\eglew.h">
@@ -1618,6 +1629,267 @@
     <ClInclude Include="Headers\Projectile.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
+    <ClInclude Include="Headers\UIManager.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\UIElement.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\TextRenderer.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\config\ftconfig.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\config\ftheader.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\config\ftmodule.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\config\ftoption.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\config\ftstdlib.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\services\svbdf.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\services\svcid.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\services\svgldict.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\services\svgxval.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\services\svkern.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\services\svmm.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\services\svotval.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\services\svpfr.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\services\svpostnm.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\services\svpscmap.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\services\svpsinfo.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\services\svsfnt.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\services\svttcmap.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\services\svtteng.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\services\svttglyf.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\services\svwinfnt.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\services\svxf86nm.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\autohint.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\ftcalc.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\ftdebug.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\ftdriver.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\ftgloadr.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\ftmemory.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\ftobjs.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\ftpic.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\ftrfork.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\ftserv.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\ftstream.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\fttrace.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\ftvalid.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\internal.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\psaux.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\pshints.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\sfnt.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\t1types.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\tttypes.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\freetype.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftadvanc.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftbbox.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftbdf.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftbitmap.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftbzip2.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftcache.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftchapters.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftcid.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\fterrdef.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\fterrors.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftgasp.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftglyph.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftgxval.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftgzip.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftimage.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftincrem.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftlcdfil.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftlist.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftlzw.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftmac.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftmm.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftmodapi.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftmoderr.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftotval.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftoutln.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftpfr.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftrender.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftsizes.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftsnames.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftstroke.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftsynth.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftsystem.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\fttrigon.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\fttypes.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftwinfnt.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftxf86.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\t1tables.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ttnameid.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\tttables.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\tttags.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ttunpat.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="External\FREETYPE\FreeType\ft2build.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="External\GLFW\glfw\lib-vc2022\glfw3.lib" />
@@ -1625,6 +1897,7 @@
     <Library Include="External\GLFW\glfw\lib-vc2022\glfw3dll.lib" />
     <Library Include="External\GLEW\glew\lib\Release\Win32\glew32.lib" />
     <Library Include="External\GLEW\glew\lib\Release\Win32\glew32s.lib" />
+    <Library Include="External\FREETYPE\FreeType\freetype.lib" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Resources\Textures\UVMap.png">

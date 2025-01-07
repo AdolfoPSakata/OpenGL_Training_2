@@ -33,8 +33,9 @@ typedef struct ShaderComposition
 {
     unsigned int vertexSource;
     unsigned int fragmentSource;
-    unsigned int vertexUniformCount;
-    unsigned int fragUniformCount;
+
+    unsigned int vertexUniformCount = 0;
+    unsigned int fragUniformCount = 0;
     std::vector<std::string> vertexStrings;
     std::vector<std::string> fragStrings;
     //TODO:: Implement others shaders 
@@ -70,5 +71,5 @@ private:
     ShaderSource ParseShader(const std::string& name, const std::string& path);
     unsigned int CompileShader(unsigned int type, const std::string& source);
     void RegisterShaderSource(ShaderSource& shader, SHADER_SOURCE_MAP& shadersMap);
-    int ProgramSetup( const ShaderComposition& source);
+    int ProgramSetup( const ShaderComposition& source, const std::string vertexName, const std::string fragName);
 };

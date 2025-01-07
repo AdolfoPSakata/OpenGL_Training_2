@@ -76,13 +76,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;GLEW_STATIC;SOLUTION_DIR=R"($(SolutionDir))";_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)OpenGL_Udemy\Source\Examples;$(SolutionDir)OpenGL_Udemy\External\GLEW\glew\include;$(SolutionDir)OpenGL_Udemy\External\GLFW\glfw\include;$(SolutionDir)OpenGL_Udemy\External\GLM\glm;$(SolutionDir)OpenGL_Udemy\External\GLM;$(SolutionDir)OpenGL_Udemy\External\IMGUI;$(SolutionDir)OpenGL_Udemy\External\STB_IMAGE;$(SolutionDir)OpenGL_Udemy\Headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)OpenGL_Udemy\Source\Examples;$(SolutionDir)OpenGL_Udemy\External\GLEW\glew\include;$(SolutionDir)OpenGL_Udemy\External\GLFW\glfw\include;$(SolutionDir)OpenGL_Udemy\External\GLM\glm;$(SolutionDir)OpenGL_Udemy\External\GLM;$(SolutionDir)OpenGL_Udemy\External\IMGUI;$(SolutionDir)OpenGL_Udemy\External\STB_IMAGE;$(SolutionDir)OpenGL_Udemy\Headers;$(SolutionDir)OpenGL_Udemy\External\FREETYPE;$(SolutionDir)OpenGL_Udemy\External\FREETYPE\FreeType;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)OpenGL_Udemy\External\GLEW\glew\lib\Release\Win32;$(SolutionDir)OpenGL_Udemy\External\GLFW\glfw\lib-vc2022</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)OpenGL_Udemy\External\GLEW\glew\lib\Release\Win32;$(SolutionDir)OpenGL_Udemy\External\FREETYPE;$(SolutionDir)OpenGL_Udemy\External\GLFW\glfw\lib-vc2022</AdditionalLibraryDirectories>
       <AdditionalDependencies>opengl32.lib;glfw3.lib;User32.lib;Gdi32.lib;Shell32.lib;glew32s.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
     </Link>
@@ -95,7 +95,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;GLEW_STATIC;SOLUTION_DIR=R"($(SolutionDir))";NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)OpenGL_Udemy\Source\Examples;$(SolutionDir)OpenGL_Udemy\External\GLEW\glew\include;$(SolutionDir)OpenGL_Udemy\External\GLFW\glfw\include;$(SolutionDir)OpenGL_Udemy\External\GLM\glm;$(SolutionDir)OpenGL_Udemy\External\GLM;$(SolutionDir)OpenGL_Udemy\External\IMGUI;$(SolutionDir)OpenGL_Udemy\External\STB_IMAGE;$(SolutionDir)OpenGL_Udemy\Headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)OpenGL_Udemy\Source\Examples;$(SolutionDir)OpenGL_Udemy\External\GLEW\glew\include;$(SolutionDir)OpenGL_Udemy\External\GLFW\glfw\include;$(SolutionDir)OpenGL_Udemy\External\GLM\glm;$(SolutionDir)OpenGL_Udemy\External\GLM;$(SolutionDir)OpenGL_Udemy\External\IMGUI;$(SolutionDir)OpenGL_Udemy\External\STB_IMAGE;$(SolutionDir)OpenGL_Udemy\Headers;$(SolutionDir)OpenGL_Udemy\External\FREETYPE;$(SolutionDir)OpenGL_Udemy\External\FREETYPE\FreeType;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -103,7 +103,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)OpenGL_Udemy\External\GLEW\glew\lib\Release\Win32;$(SolutionDir)OpenGL_Udemy\External\GLFW\glfw\lib-vc2022</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)OpenGL_Udemy\External\GLEW\glew\lib\Release\Win32;$(SolutionDir)OpenGL_Udemy\External\FREETYPE;$(SolutionDir)OpenGL_Udemy\External\GLFW\glfw\lib-vc2022</AdditionalLibraryDirectories>
       <AdditionalDependencies>opengl32.lib;glfw3.lib;User32.lib;Gdi32.lib;Shell32.lib;glew32s.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
     </Link>
@@ -147,9 +147,11 @@
     <ClCompile Include="External\IMGUI\IMGUI\imgui_draw.cpp" />
     <ClCompile Include="External\IMGUI\IMGUI\imgui_impl_glfw_gl3.cpp" />
     <ClCompile Include="External\STB_IMAGE\stb_image.cpp" />
-    <ClCompile Include="Resources\Projectile.cpp" />
+    <ClCompile Include="Source\Projectile.cpp" />
     <ClCompile Include="Source\Enemy.cpp" />
     <ClCompile Include="Source\GameObjectManager.cpp" />
+    <ClCompile Include="Source\TextRenderer.cpp" />
+    <ClCompile Include="Source\UIElement.cpp" />
     <ClCompile Include="Source\TextureManager.cpp" />
     <ClCompile Include="Source\Game.cpp" />
     <ClCompile Include="Source\Level.cpp" />
@@ -161,6 +163,7 @@
     <ClCompile Include="Source\Player.cpp" />
     <ClCompile Include="Source\RenderManager.cpp" />
     <ClCompile Include="Source\Texture.cpp" />
+    <ClCompile Include="Source\UIManager.cpp" />
     <ClCompile Include="Source\UniformsManager.cpp" />
     <ClCompile Include="Source\Renderer.cpp" />
     <ClCompile Include="Source\VertexArrayObject.cpp" />
@@ -440,9 +443,95 @@
     <None Include="Libs\GLFW\glwf\docs\html\window_8md.html" />
     <None Include="Libs\GLFW\glwf\docs\html\window_guide.html" />
     <None Include="Resources\Shaders\BasicVertex.shader" />
-    <None Include="Resources\Shaders\zBasicFrag.shader" />
+    <None Include="Resources\Shaders\BasicFrag.shader" />
+    <None Include="Resources\Shaders\TextFrag.shader" />
+    <None Include="Resources\Shaders\TextVertex.shader" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\config\ftconfig.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\config\ftheader.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\config\ftmodule.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\config\ftoption.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\config\ftstdlib.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\freetype.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftadvanc.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftbbox.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftbdf.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftbitmap.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftbzip2.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftcache.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftchapters.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftcid.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\fterrdef.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\fterrors.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftgasp.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftglyph.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftgxval.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftgzip.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftimage.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftincrem.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftlcdfil.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftlist.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftlzw.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftmac.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftmm.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftmodapi.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftmoderr.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftotval.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftoutln.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftpfr.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftrender.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftsizes.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftsnames.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftstroke.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftsynth.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftsystem.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\fttrigon.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\fttypes.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftwinfnt.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ftxf86.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\autohint.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\ftcalc.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\ftdebug.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\ftdriver.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\ftgloadr.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\ftmemory.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\ftobjs.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\ftpic.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\ftrfork.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\ftserv.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\ftstream.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\fttrace.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\ftvalid.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\internal.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\psaux.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\pshints.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\services\svbdf.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\services\svcid.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\services\svgldict.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\services\svgxval.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\services\svkern.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\services\svmm.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\services\svotval.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\services\svpfr.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\services\svpostnm.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\services\svpscmap.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\services\svpsinfo.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\services\svsfnt.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\services\svttcmap.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\services\svtteng.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\services\svttglyf.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\services\svwinfnt.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\services\svxf86nm.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\sfnt.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\t1types.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\internal\tttypes.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\t1tables.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ttnameid.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\tttables.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\tttags.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\freetype\ttunpat.h" />
+    <ClInclude Include="External\FREETYPE\FreeType\ft2build.h" />
     <ClInclude Include="External\GLEW\glew\include\GL\eglew.h" />
     <ClInclude Include="External\GLEW\glew\include\GL\glew.h" />
     <ClInclude Include="External\GLEW\glew\include\GL\glxew.h" />
@@ -750,6 +839,9 @@
     <ClInclude Include="Headers\Definitions.h" />
     <ClInclude Include="Headers\GameObject.h" />
     <ClInclude Include="Headers\GameObjectManager.h" />
+    <ClInclude Include="Headers\TextRenderer.h" />
+    <ClInclude Include="Headers\UIElement.h" />
+    <ClInclude Include="Headers\UIManager.h" />
     <ClInclude Include="Headers\Projectile.h" />
     <ClInclude Include="Headers\Level.h" />
     <ClInclude Include="Headers\Player.h" />
@@ -770,6 +862,7 @@
     <ClInclude Include="Source\Examples\Examples.h" />
   </ItemGroup>
   <ItemGroup>
+    <Library Include="External\FREETYPE\FreeType\freetype.lib" />
     <Library Include="External\GLEW\glew\lib\Release\Win32\glew32.lib" />
     <Library Include="External\GLEW\glew\lib\Release\Win32\glew32s.lib" />
     <Library Include="External\GLFW\glfw\lib-vc2022\glfw3.lib" />

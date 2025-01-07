@@ -4,6 +4,8 @@
 #include <Enemy.h>
 #include <RenderManager.h>
 #include <GameObjectManager.h>
+#include <UIManager.h>
+#include <TextRenderer.h>
 
 enum GameState {
     GAME_ACTIVE,
@@ -24,6 +26,8 @@ public:
     static float deltaTime;
     static float MAX_COOLDOWN;
     static RenderManager* renderManager; 
+    static UIManager* uiManager; 
+    static TextRenderer* test;
     //static GameObjectManager* objectManager;
     void Init();
     void CreateCallbacks(GLFWwindow* window);

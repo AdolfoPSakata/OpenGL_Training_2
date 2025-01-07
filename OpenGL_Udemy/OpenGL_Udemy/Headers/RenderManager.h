@@ -40,6 +40,7 @@ public:
     VertexArrayObject* vertexArrayObject;
     VertexBuffer* vertexBuffer;
     Shader* shader;
+    Shader* textShader;
     IndexBuffer* indexBuffer;
 
     int Init();
